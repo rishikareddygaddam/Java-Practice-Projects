@@ -1,6 +1,8 @@
 package secondsminutes;
 
 public class SecondsToMinutes {
+    private static final String INVALID_MESSAGE = "Invalid values";
+
     public static String getDurationString(long minutes, long seconds){
         if(minutes >=0 && seconds >=0 && seconds <= 59){
             long hours = minutes / 60;
@@ -24,7 +26,7 @@ public class SecondsToMinutes {
             return hoursString+" "+minuteString+" "+secondString;
 
         }else{
-            return "Invalid value";
+            return INVALID_MESSAGE;
         }
     }
 
@@ -35,27 +37,8 @@ public class SecondsToMinutes {
             return getDurationString(minutes, remainingSeconds);
 
         } else {
-            return "Invalid value";
+            return INVALID_MESSAGE;
         }
     }
-
-//    public static String getDurationString(long minutes, long seconds){
-//        if(minutes < 0 || seconds < 0 || seconds > 59){
-//            return "Invalid value";
-//        }
-//        long hours = minutes / 60;
-//        long remainingMinutes = minutes % 60;
-//        return hours+"h"+" "+remainingMinutes+"m"+" "+seconds+"s";
-//    }
-//
-//    public static String getDurationString(int seconds){
-//        if(seconds < 0){
-//            return "Invalid value";
-//        }
-//        long minutes = seconds/60;
-//        long remainingSeconds = seconds%60;
-//        return getDurationString(minutes,remainingSeconds);
-//    }
-
 
 }
